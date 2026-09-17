@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Playlist Exporter for Apple Music v19",
+  "version": "1.19.0",
+  "description": "Firefox Apple Music playlist exporter v19 — duplicate report plus read-only duplicate-block boundary analysis.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://music.apple.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://music.apple.com/*"
+      ],
+      "js": [
+        "apple-content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "apple-music-interceptor.js"
+      ],
+      "matches": [
+        "*://music.apple.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "Playlist Exporter v19"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "playlist-exporter-v19@gretsch-local"
+    }
+  }
+}
